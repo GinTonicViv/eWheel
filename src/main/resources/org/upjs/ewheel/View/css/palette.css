@@ -1,0 +1,223 @@
+/* =========================================================
+   GREENISH BLACK
+   ========================================================= */
+
+.greenish-black {
+    -fx-background-color: #2F2F2F;
+}
+
+.greenish-black-100 {
+    -fx-background-color: #181818;
+}
+
+.greenish-black-200 {
+    -fx-background-color: #1C1C1C;
+}
+
+.greenish-black-300 {
+    -fx-background-color: #212121;
+}
+
+.greenish-black-400 {
+    -fx-background-color: #262626;
+}
+
+.greenish-black-500 {
+    -fx-background-color: #2F2F2F;
+}
+
+.greenish-black-600 {
+    -fx-background-color: #343434;
+}
+
+.greenish-black-700 {
+    -fx-background-color: #383838;
+}
+
+.greenish-black-800 {
+    -fx-background-color: #3D3D3D;
+}
+
+.greenish-black-900 {
+    -fx-background-color: #424242;
+}
+
+
+/* =========================================================
+   MEDIUM GRAY
+   ========================================================= */
+
+.medium-gray {
+    -fx-background-color: #989894;
+}
+
+.medium-gray-100 {
+    -fx-background-color: #4C4C4A;
+}
+
+.medium-gray-200 {
+    -fx-background-color: #5C5C58;
+}
+
+.medium-gray-300 {
+    -fx-background-color: #6B6B67;
+}
+
+.medium-gray-400 {
+    -fx-background-color: #7A7A76;
+}
+
+.medium-gray-500 {
+    -fx-background-color: #989894;
+}
+
+.medium-gray-600 {
+    -fx-background-color: #A7A7A3;
+}
+
+.medium-gray-700 {
+    -fx-background-color: #B5B5B3;
+}
+
+.medium-gray-800 {
+    -fx-background-color: #C4C4C2;
+}
+
+.medium-gray-900 {
+    -fx-background-color: #D3D3D1;
+}
+
+
+/* =========================================================
+   LIGHT GRAY
+   ========================================================= */
+
+.light-gray {
+    -fx-background-color: #C1BEB9;
+}
+
+.light-gray-100 {
+    -fx-background-color: #646059;
+}
+
+.light-gray-200 {
+    -fx-background-color: #78736B;
+}
+
+.light-gray-300 {
+    -fx-background-color: #8C867D;
+}
+
+.light-gray-400 {
+    -fx-background-color: #9D9991;
+}
+
+.light-gray-500 {
+    -fx-background-color: #C1BEB9;
+}
+
+.light-gray-600 {
+    -fx-background-color: #D3D1CD;
+}
+
+.light-gray-700 {
+    -fx-background-color: #E5E3E1;
+}
+
+.light-gray-800 {
+    -fx-background-color: #F6F6F5;
+}
+
+.light-gray-900 {
+    -fx-background-color: #FFFFFF;
+}
+
+
+/* =========================================================
+   GRAYISH YELLOW
+   ========================================================= */
+
+.grayish-yellow {
+    -fx-background-color: #C8BEA6;
+}
+
+.grayish-yellow-100 {
+    -fx-background-color: #716446;
+}
+
+.grayish-yellow-200 {
+    -fx-background-color: #887854;
+}
+
+.grayish-yellow-300 {
+    -fx-background-color: #9E8C62;
+}
+
+.grayish-yellow-400 {
+    -fx-background-color: #AC9D79;
+}
+
+.grayish-yellow-500 {
+    -fx-background-color: #C8BEA6;
+}
+
+.grayish-yellow-600 {
+    -fx-background-color: #D6CFBD;
+}
+
+.grayish-yellow-700 {
+    -fx-background-color: #E4DFD3;
+}
+
+.grayish-yellow-800 {
+    -fx-background-color: #F2F0EA;
+}
+
+.grayish-yellow-900 {
+    -fx-background-color: #FFFFFF;
+}
+
+
+/* =========================================================
+   PINKISH WHITE
+   ========================================================= */
+
+.pinkish-white {
+    -fx-background-color: #E5E2DB;
+}
+
+.pinkish-white-100 {
+    -fx-background-color: #82775E;
+}
+
+.pinkish-white-200 {
+    -fx-background-color: #9A8E73;
+}
+
+.pinkish-white-300 {
+    -fx-background-color: #ADA38D;
+}
+
+.pinkish-white-400 {
+    -fx-background-color: #BFB8A7;
+}
+
+.pinkish-white-500 {
+    -fx-background-color: #E5E2DB;
+}
+
+.pinkish-white-600 {
+    -fx-background-color: #F8F7F5;
+}
+
+.pinkish-white-700 {
+    -fx-background-color: #FFFFFF;
+}
+
+.pinkish-white-800 {
+    -fx-background-color: #FFFFFF;
+}
+
+.pinkish-white-900 {
+    -fx-background-color: #FFFFFF;
+}

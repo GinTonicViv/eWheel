@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.upjs.ewheel.Dashboard.DashBoardController;
 
 public class EWheelApp extends Application {
 
@@ -15,13 +16,13 @@ public class EWheelApp extends Application {
                 getClass().getResource("AttenderApp.fxml")
         );
 
-        var mainController = new AttenderController();
+        var mainController = new DashBoardController();
         fxmlLoader.setController(mainController);
         Parent rootPane = fxmlLoader.load();
         var scene = new Scene(rootPane);
-        stage.setTitle("Dochádzky");
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setTitle("Dochádzky");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

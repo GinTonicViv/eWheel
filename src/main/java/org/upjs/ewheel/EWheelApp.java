@@ -1,8 +1,5 @@
 package org.upjs.ewheel;
 
-import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
-import de.codecentric.centerdevice.javafxsvg.dimension.Dimension;
-import de.codecentric.centerdevice.javafxsvg.dimension.DimensionProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

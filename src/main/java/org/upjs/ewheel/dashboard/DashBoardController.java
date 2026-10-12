@@ -1,4 +1,4 @@
-package org.upjs.ewheel.Dashboard;
+package org.upjs.ewheel.dashboard;
 
 public class DashBoardController {
 }

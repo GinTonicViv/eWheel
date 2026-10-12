@@ -1,15 +1,16 @@
 package org.upjs.ewheel;
 
+import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
+import de.codecentric.centerdevice.javafxsvg.dimension.Dimension;
+import de.codecentric.centerdevice.javafxsvg.dimension.DimensionProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.upjs.ewheel.Dashboard.DashBoardController;
+import org.upjs.ewheel.dashboard.DashBoardController;
 
 public class EWheelApp extends Application {
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         var fxmlLoader = new FXMLLoader(

@@ -13,7 +13,7 @@ This project was made in collaboration with @CaptainRepus (See authors for more 
 
 To best describe our app and navigation we've prepared detailed diagram explaining navigation between stages/scenes
 
-<img src="eWheel-state-machine-diagram.png" alt="State machine diagram">
+<img src="eWheel-smd.png" alt="State machine diagram">
 _author: Jakub Bendík_
 
 ### Pracovna verzia Navrhu Databazy (Zatial len kostra) - !NOT FINAL!

@@ -43,27 +43,27 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="mainBg" prefHeight="600.0" prefWidth="900.0" spacing="2.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.dashboard.DashBoardController">
+<VBox id="root" prefHeight="600.0" prefWidth="900.0" spacing="2.0" styleClass="root" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.dashboard.DashBoardController">
   <children>
-      <HBox id="menuBar" fx:id="userAccountImage" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="NEVER">
+      <HBox id="menuBar" fx:id="userAccountImage" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="root" stylesheets="@css/dashboardMain.css" VBox.vgrow="NEVER">
          <children>
             <Label text="eWheel">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
                <font>
-                  <Font size="28.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
             <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
             <Label fx:id="usernameLabel" text="\$username">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <StackPane>
                <children>
-                  <ImageView fx:id="userAvatarImage" fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="userAvatarImage" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/avatar.png" />
                      </image>
@@ -91,9 +91,9 @@
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
-                              <Label text="Prehlad">
+                              <Label text="\%prehlad%">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -115,7 +115,7 @@
                               </ImageView>
                               <Label text="Schvalovanie vyjazdov">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -137,7 +137,7 @@
                               </ImageView>
                               <Label text="Kniha vyjazdov">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -159,7 +159,7 @@
                               </ImageView>
                               <Label text="Administrativa Vozidiel">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -181,7 +181,7 @@
                               </ImageView>
                               <Label text="Sprava Pouzivatelov">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -203,7 +203,7 @@
                               </ImageView>
                               <Label text="Sprava dani">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />

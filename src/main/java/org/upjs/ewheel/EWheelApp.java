@@ -10,15 +10,11 @@ import org.upjs.ewheel.dashboard.DashBoardController;
 public class EWheelApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        var fxmlLoader = new FXMLLoader(
-                getClass().getResource("AttenderApp.fxml")
-        );
+        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/dashboardMain.fxml"));
+        Parent rootPane = loader.load();
 
-        var mainController = new DashBoardController();
-        fxmlLoader.setController(mainController);
-        Parent rootPane = fxmlLoader.load();
         var scene = new Scene(rootPane);
-        primaryStage.setTitle("Dochádzky");
+        primaryStage.setTitle("eWheel");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

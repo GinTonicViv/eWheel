@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS eWheelDB;
+       USE eWheelDB;
 CREATE TABLE IF NOT EXISTS `Vehicle` (
                                          `Vehicle_id` BINARY(16) NOT NULL UNIQUE,
     `name` VARCHAR(255) NOT NULL,

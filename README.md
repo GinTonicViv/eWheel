@@ -13,12 +13,12 @@ This project was made in collaboration with @CaptainRepus (See authors for more 
 
 To best describe our app and navigation we've prepared detailed diagram explaining navigation between stages/scenes
 
-<img src="eWheel-smd.png" alt="State machine diagram">
-_author: Jakub Bendík_
+![eWheel-smd.png](eWheel-smd.png)
+*by eWheel*
 
-### Pracovna verzia Navrhu Databazy (Zatial len kostra) - !NOT FINAL!
+### Database schema
 
-Navrh Databazy, toto je len pracovna verzia, mozno ocakavat zmeny, navrh db nbude mat na starosti pan kolega Lazorik ako projekt pre predmet Db1a+Paz1c
+Schema that will be used to store data for our application
 
-<img src="eWheel-erd-notFinal.png" alt="ER diagram">
-_author: Jakub Bendík_
+![eWheel_erd.png](eWheel_erd.png)
+*by eWheel*

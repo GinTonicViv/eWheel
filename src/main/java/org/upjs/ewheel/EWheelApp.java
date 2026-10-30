@@ -2,15 +2,17 @@ package org.upjs.ewheel;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.upjs.ewheel.dashboard.DashBoardController;
 
 public class EWheelApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/dashboardMain.fxml"));
+        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/LoginView.fxml"));
         Parent rootPane = loader.load();
 
         var scene = new Scene(rootPane);

@@ -1,42 +1,52 @@
-#root {
-    /* =========================================================
-       GREENISH BLACK
-       ========================================================= */
+/*
+    GREENISH BLACK
     -greenish-black: #2F2F2F;
     -greenish-black-100: #181818;
     -greenish-black-900: #424242;
 
-    /* =========================================================
-       MEDIUM GRAY
-       ========================================================= */
+    MEDIUM GRAY
     -medium-gray: #989894;
     -medium-gray-100: #4C4C4A;
     -medium-gray-900: #D3D3D1;
 
-    /* =========================================================
-       LIGHT GRAY
-       ========================================================= */
+    LIGHT GRAY
     -light-gray: #C1BEB9;
     -light-gray-100: #646059;
     -light-gray-900: #FFFFFF;
 
-    /* =========================================================
-       GRAYISH YELLOW
-       ========================================================= */
+    GRAYISH YELLOW
     -grayish-yellow: #C8BEA6;
     -grayish-yellow-100: #716446;
     -grayish-yellow-900: #FFFFFF;
 
-    /* =========================================================
-       PINKISH WHITE
-       ========================================================= */
+    PINKISH WHITE
     -pinkish-white: #E5E2DB;
     -pinkish-white-100: #82775E;
     -pinkish-white-900: #FFFFFF;
+*/
 
-    -fxbackground-color: #2f2f2f;
+.root {
+    -fx-background-color: #e5e2db;
 }
 
-.root{
-    -fxbackground-color: #2f2f2f;
+.logo {
+    -fx-text-fill: #e5e2db;
+}
+
+.menuBar {
+    -fx-background-color: #2f2f2f;
+    -fx-background-radius: 0 0 12 0;
+    -fx-effect: dropshadow(gaussian, #1f1f1f, 8, 0, 0, 3)
+}
+
+.menuBarLogin {
+    -fx-background-color: #2f2f2f;
+    -fx-background-radius: 0 0 12 12;
+    -fx-effect: dropshadow(gaussian, #1f1f1f, 8, 0, 0, 3)
+}
+
+.sideBar {
+    -fx-background-color: #c1beb9;
+    -fx-background-radius: 0 12 12 0;
+    -fx-effect: dropshadow(gaussian, #989894, 8, 0, 3, 3)
 }

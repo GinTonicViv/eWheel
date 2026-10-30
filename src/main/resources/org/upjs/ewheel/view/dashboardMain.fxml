@@ -33,32 +33,41 @@
 -->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox id="root" prefHeight="600.0" prefWidth="900.0" spacing="2.0" styleClass="root" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.dashboard.DashBoardController">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1200.0" prefWidth="1920.0" spacing="3.0" style="-fx-background-color: e5e2db;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.dashboard.DashBoardController">
   <children>
-      <HBox id="menuBar" fx:id="userAccountImage" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="root" stylesheets="@css/dashboardMain.css" VBox.vgrow="NEVER">
+      <HBox fx:id="userAccountImage" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="menuBar" stylesheets="@../view/css/dashboardMain.css" VBox.vgrow="NEVER">
          <children>
-            <Label text="eWheel">
+            <Label text="eWheel" textFill="#e5e2db">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
                <font>
-                  <Font size="36.0" />
+                  <Font size="48.0" />
                </font>
             </Label>
             <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
-            <Label fx:id="usernameLabel" text="\$username">
+            <Label fx:id="fullNameLabel" text="\$full_name" textFill="#e5e2db">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <StackPane>
@@ -80,20 +89,20 @@
       </HBox>
       <HBox id="body" VBox.vgrow="ALWAYS">
          <children>
-            <VBox id="sideBar" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <VBox id="sideBar" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="sideBar" stylesheets="@../view/css/dashboardMain.css">
                <children>
                   <StackPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0">
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
-                              <Label text="\%prehlad%">
+                              <Label text="Prehlad">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -108,14 +117,14 @@
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
                               <Label text="Schvalovanie vyjazdov">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -130,14 +139,14 @@
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
                               <Label text="Kniha vyjazdov">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -152,14 +161,14 @@
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
                               <Label text="Administrativa Vozidiel">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -174,14 +183,14 @@
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
                               <Label text="Sprava Pouzivatelov">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -196,14 +205,14 @@
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../../../../../../../../../Downloads/arrow-forward-ios-rounded.png" />
                                  </image>
                               </ImageView>
                               <Label text="Sprava dani">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -217,21 +226,134 @@
                   <Pane maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
-            <StackPane id="content" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+            <StackPane id="content" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #e5e2db;" HBox.hgrow="ALWAYS">
                <HBox.margin>
-                  <Insets />
+                  <Insets left="5.0" top="5.0" />
                </HBox.margin>
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="1000.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Schvalovanie Vyjzadov">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <TextField maxWidth="-Infinity" minWidth="300.0" prefWidth="400.0" promptText="vyhladajte(meno alebo auto)" />
+                              <StackPane prefHeight="40.0" prefWidth="40.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Filtrujte:">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <GridPane hgap="10.0" HBox.hgrow="ALWAYS">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="80.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="zamestnanec">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="vozidlo" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" />
+                                          <ChoiceBox maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <DatePicker GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label text="Datum od:" GridPane.columnIndex="2" />
+                                          <Label text="Datum do:" GridPane.columnIndex="3" />
+                                          <Label text="Status:" GridPane.columnIndex="4" />
+                                          <DatePicker GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <ListView maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="700.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ListView>
+                              <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <GridPane hgap="10.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints minWidth="10.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                                       </rowConstraints>
+                                       <children>
+                                          <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </StackPane>
+                                          <Label text="strana X z Y" GridPane.columnIndex="1" />
+                                          <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </StackPane>
+                                          <Button mnemonicParsing="false" text="Ulozit zmeny" GridPane.columnIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
             </StackPane>
          </children>
          <VBox.margin>
-            <Insets left="5.0" right="5.0" />
+            <Insets right="5.0" />
          </VBox.margin>
       </HBox>
     <HBox id="footer" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <children>
         <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="© by Jakub Bendík, Leonard Anton Lazorík 2026" HBox.hgrow="ALWAYS">
           <font>
-            <Font size="11.0" fx:id="x3" />
+            <Font size="18.0" fx:id="x3" />
           </font>
           <textFill>
             <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
@@ -243,6 +365,9 @@
       <padding>
         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
       </padding>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
     </HBox>
   </children>
 </VBox>

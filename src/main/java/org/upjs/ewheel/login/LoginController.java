@@ -11,7 +11,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.concurrent.RecursiveAction;
 
 public class LoginController {
 
@@ -32,7 +31,7 @@ public class LoginController {
 
     @FXML
     void loginPressed() throws IOException {
-        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/dashboardMain.fxml"));
+        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/DashboardMainStage.fxml"));
         Parent rootPane = loader.load();
 
         var scene = new Scene(rootPane);

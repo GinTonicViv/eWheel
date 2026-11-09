@@ -1,4 +1,4 @@
-package org.upjs.ewheel.login;
+package org.upjs.ewheel.controllers.login;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

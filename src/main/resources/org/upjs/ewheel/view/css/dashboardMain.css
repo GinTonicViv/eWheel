@@ -1,31 +1,46 @@
-/*
-    GREENISH BLACK
+.root {
+    /* CONSTANTS */
+    -golden-ratio: 1.618;
+    -golden-ratio-d:3.236;
+    -golden-ratio-t:4.854;
+
+    /*COLOURS*/
+    /* GREENISH BLACK */
     -greenish-black: #2F2F2F;
     -greenish-black-100: #181818;
     -greenish-black-900: #424242;
 
-    MEDIUM GRAY
+    /* MEDIUM GRAY */
     -medium-gray: #989894;
     -medium-gray-100: #4C4C4A;
     -medium-gray-900: #D3D3D1;
 
-    LIGHT GRAY
+    /* LIGHT GRAY */
     -light-gray: #C1BEB9;
     -light-gray-100: #646059;
     -light-gray-900: #FFFFFF;
 
-    GRAYISH YELLOW
+    /* GRAYISH YELLOW */
     -grayish-yellow: #C8BEA6;
     -grayish-yellow-100: #716446;
     -grayish-yellow-900: #FFFFFF;
 
-    PINKISH WHITE
+    /* PINKISH WHITE */
     -pinkish-white: #E5E2DB;
     -pinkish-white-100: #82775E;
     -pinkish-white-900: #FFFFFF;
-*/
 
-.root {
+    /* SAGE GREEN */
+    -sage-green: #57745B;
+    -sage-green-100: #384E3C;
+    -sage-green-900: #9FB4A0;
+
+    /* DUSTY RED */
+    -dusty-red: #A45750;
+    -dusty-red-100: #783B38;
+    -dusty-red-900: #CE9690;
+
+
     -fx-background-color: #e5e2db;
 }
 
@@ -34,19 +49,124 @@
 }
 
 .menuBar {
-    -fx-background-color: #2f2f2f;
+    -fx-background-color: -greenish-black;
     -fx-background-radius: 0 0 12 0;
-    -fx-effect: dropshadow(gaussian, #1f1f1f, 8, 0, 0, 3)
+    -fx-effect: dropshadow(gaussian, -greenish-black, 8, 0, 0, 3);
+    -fx-text-fill: -pinkish-white;
 }
 
 .menuBarLogin {
-    -fx-background-color: #2f2f2f;
+    -fx-background-color: -greenish-black;
     -fx-background-radius: 0 0 12 12;
-    -fx-effect: dropshadow(gaussian, #1f1f1f, 8, 0, 0, 3)
+    -fx-effect: dropshadow(gaussian, -greenish-black, 8, 0, 0, 3);
+    -fx-text-fill: -pinkish-white;
 }
 
 .sideBar {
-    -fx-background-color: #c1beb9;
+    -fx-background-color: -grayish-yellow;
     -fx-background-radius: 0 12 12 0;
-    -fx-effect: dropshadow(gaussian, #989894, 8, 0, 3, 3)
+    -fx-effect: dropshadow(gaussian, -grayish-yellow-100, 8, 0, 3, 3)
+}
+
+/* Button */
+.sideButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.sideButton:hover {
+    -fx-background-color: -grayish-yellow-100;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, -grayish-yellow-100, 8, 0, 3, 3);
+}
+
+/* Label */
+.sideButton .label {
+    -fx-text-fill: -greenish-black;
+}
+
+.sideButton:hover .label {
+    -fx-text-fill: -pinkish-white;
+}
+
+/* Icons */
+.sideIcon {
+    -fx-stroke: -greenish-black;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+
+}
+.sideButton:hover .sideIcon {
+    -fx-stroke: -pinkish-white;
+}
+
+/* Tieto ikonky musia byt filled */
+.sideButton:hover .vehiclesIcon {
+    -fx-fill: -pinkish-white;
+}
+.sideButton:hover .approvalcon {
+    -fx-fill: -pinkish-white;
+}
+.sideButton:hover .tripsBookIcon {
+    -fx-fill: -pinkish-white;
+}
+
+/* Icon Shapes */
+.dashboardIcon {
+    -fx-fill: transparent;
+    -fx-stroke-width: 2;
+}
+
+.approvalcon {
+    -fx-fill: -greenish-black;
+    -fx-stroke-width: 0.5;
+}
+
+.tripsBookIcon {
+    -fx-fill: -greenish-black;
+    -fx-stroke-width: 0.5;
+}
+
+.vehiclesIcon {
+    -fx-fill: -greenish-black;
+    -fx-stroke-width: 0.5;
+}
+
+.usersIcon {
+    -fx-fill: transparent;
+    -fx-stroke-width: 2;
+}
+
+.avatarIcon {
+    -fx-stroke: -pinkish-white;
+    -fx-fill: -pinkish-white;
+    -fx-stroke-width: 0.2;
+    -fx-scale-x: 2;
+    -fx-scale-y: 2;
+}
+
+.avatarIcon:hover {
+    -fx-cursor: hand;
+}
+
+/* Buttons behaviour */
+.okButton {
+    -fx-background-color: -sage-green-900;
+    -fx-text-fill: -greenish-black-100;
+}
+
+.cancelButton {
+    -fx-background-color: -dusty-red-900;
+    -fx-text-fill: -greenish-black-100;
+}
+
+.okButton:hover {
+    -fx-background-color: -sage-green;
+    -fx-text-fill: -pinkish-white;
+}
+
+.cancelButton:hover {
+    -fx-background-color: -dusty-red;
+    -fx-text-fill: -pinkish-white;
 }

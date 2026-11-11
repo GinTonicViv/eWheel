@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="760.0" prefWidth="1200.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <TextField fx:id="approvalTextField" maxWidth="-Infinity" minWidth="450.0" prefWidth="450.0" promptText="vyhladajte(auto, ŠPZ, adresu)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </TextField>
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="35.0">
+               <children>
+                  <SVGPath content="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6" styleClass="searchIcon" />
+               </children>
+               <styleClass>
+                  <String fx:value="square-button" />
+                  <String fx:value="searchIcon" />
+               </styleClass>
+            </StackPane>
+            <Pane maxWidth="1.7976931348623157E308" minWidth="0.0" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" styleClass="okButton" text="Vytvoriť výjazd" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" left="20.0" right="20.0" top="3.0" />
+               </padding>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Filtre:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <GridPane hgap="10.0" HBox.hgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Zamestnanec">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Vozidlo" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="userChoiceBox" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ChoiceBox>
+                        <ChoiceBox fx:id="vehicleChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ChoiceBox>
+                        <DatePicker fx:id="dateFromDatePicker" maxWidth="1.7976931348623157E308" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></DatePicker>
+                        <Label text="Dátum od:" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Dátum do:" GridPane.columnIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Status:" GridPane.columnIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="DateToDatePicker" maxWidth="1.7976931348623157E308" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></DatePicker>
+                        <ChoiceBox fx:id="statusChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ChoiceBox>
+                     </children>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="tripsListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ListView>
+            <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" VBox.vgrow="NEVER">
+               <children>
+                  <GridPane hgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints minWidth="10.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                     </rowConstraints>
+                     <children>
+                        <StackPane fx:id="previousPageStackPaneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0">
+                           <children>
+                              <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" rotate="180.0" styleClass="pageIcon" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="square-button" />
+                              <String fx:value="pageIcon" />
+                           </styleClass>
+                        </StackPane>
+                        <StackPane fx:id="nextPageStackPaneBUtton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="2">
+                           <children>
+                              <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" styleClass="pageIcon" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="square-button" />
+                              <String fx:value="pageIcon" />
+                           </styleClass>
+                        </StackPane>
+                        <HBox alignment="CENTER" spacing="4.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="strana">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="\$currPageNum">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="z">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="\$pageCount">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

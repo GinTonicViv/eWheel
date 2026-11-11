@@ -55,6 +55,10 @@
     -fx-text-fill: -pinkish-white;
 }
 
+.sceneName {
+    -fx-text-fill: -pinkish-white;
+}
+
 .menuBarLogin {
     -fx-background-color: -greenish-black;
     -fx-background-radius: 0 0 12 12;
@@ -102,53 +106,71 @@
 }
 
 /* Tieto ikonky musia byt filled */
-.sideButton:hover .vehiclesIcon {
+.sideButton:hover .vehiclesIcon,
+.sideButton:hover .approvalcon,
+.sideButton:hover .tripsBookIcon{
     -fx-fill: -pinkish-white;
 }
-.sideButton:hover .approvalcon {
-    -fx-fill: -pinkish-white;
-}
-.sideButton:hover .tripsBookIcon {
-    -fx-fill: -pinkish-white;
-}
-
 /* Icon Shapes */
-.dashboardIcon {
+.dashboardIcon, .usersIcon {
     -fx-fill: transparent;
     -fx-stroke-width: 2;
 }
 
-.approvalcon {
+.approvalcon,
+.tripsBookIcon,
+.vehiclesIcon{
     -fx-fill: -greenish-black;
     -fx-stroke-width: 0.5;
 }
 
-.tripsBookIcon {
-    -fx-fill: -greenish-black;
-    -fx-stroke-width: 0.5;
-}
-
-.vehiclesIcon {
-    -fx-fill: -greenish-black;
-    -fx-stroke-width: 0.5;
-}
-
-.usersIcon {
-    -fx-fill: transparent;
-    -fx-stroke-width: 2;
-}
-
-.avatarIcon {
+.avatarIcon SVGPath {
     -fx-stroke: -pinkish-white;
     -fx-fill: -pinkish-white;
     -fx-stroke-width: 0.2;
-    -fx-scale-x: 2;
-    -fx-scale-y: 2;
+    -fx-scale-y: 4;
+    -fx-scale-x: 4;
 }
 
 .avatarIcon:hover {
     -fx-cursor: hand;
 }
+
+/* Per Scene Icons */
+
+/* Trip Approvals */
+.square-button {
+    -fx-border-color: -greenish-black;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.searchIcon {
+    -fx-fill: transparent;
+    -fx-stroke: -greenish-black;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+    -fx-stroke-width: 2.5;
+}
+
+.pageIcon {
+    -fx-fill: -greenish-black;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.square-button:hover,
+.square-button:hover .searchIcon,
+.square-button:hover .pageIcon{
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-background-color: -grayish-yellow;
+    -fx-stroke: -grayish-yellow-100;
+    -fx-border-color: none;
+    -fx-effect: dropshadow(gaussian, -grayish-yellow, 8, 0, 3, 3);
+}
+
+/*  */
 
 /* Buttons behaviour */
 .okButton {
@@ -162,11 +184,13 @@
 }
 
 .okButton:hover {
+    -fx-cursor: hand;
     -fx-background-color: -sage-green;
     -fx-text-fill: -pinkish-white;
 }
 
 .cancelButton:hover {
+    -fx-cursor: hand;
     -fx-background-color: -dusty-red;
     -fx-text-fill: -pinkish-white;
 }

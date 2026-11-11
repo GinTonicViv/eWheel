@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class EWheelApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/LoginStage.fxml"));
+        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/login.fxml"));
         Parent rootPane = loader.load();
 
         var scene = new Scene(rootPane);

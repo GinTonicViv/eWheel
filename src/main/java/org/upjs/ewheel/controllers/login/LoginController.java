@@ -31,7 +31,7 @@ public class LoginController {
 
     @FXML
     void loginPressed() throws IOException {
-        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/DashboardMainStage.fxml"));
+        var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/mainPage.fxml"));
         Parent rootPane = loader.load();
 
         var scene = new Scene(rootPane);

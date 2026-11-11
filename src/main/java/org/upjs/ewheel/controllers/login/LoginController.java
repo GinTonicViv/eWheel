@@ -17,11 +17,11 @@ public class LoginController {
     @FXML
     private Button loginButotn;
 
-    private Stage loginSatge;
+    private Stage loginStage;
 
     @FXML
-    public void initialize(Stage loginSatge) {
-        this.loginSatge = loginSatge;
+    public void initialize(Stage loginStage) {
+        this.loginStage = loginStage;
     }
 
     @FXML
@@ -33,6 +33,8 @@ public class LoginController {
     void loginPressed() throws IOException {
         var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/mainPage.fxml"));
         Parent rootPane = loader.load();
+
+
 
         var scene = new Scene(rootPane);
 
@@ -51,7 +53,7 @@ public class LoginController {
         stage.setScene(scene);
         stage.show();
         //uz po validacii mozeme zavriet login okno
-        loginSatge.close();
+        loginStage.hide();
     }
 
 }

@@ -44,9 +44,9 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1500.0" spacing="3.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.controllers.dashboard.DashBoardController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1500.0" spacing="3.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.controllers.mainPage.MainPageController">
   <children>
-      <HBox fx:id="userAccountImage" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" styleClass="menuBar" stylesheets="@../view/css/dashboardMain.css" VBox.vgrow="NEVER">
+      <HBox fx:id="menuBar" alignment="CENTER_RIGHT" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" styleClass="menuBar" stylesheets="@../view/css/dashboardMain.css" VBox.vgrow="NEVER">
          <children>
             <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="eWheel" textFill="#e5e2db">
                <HBox.margin>
@@ -244,14 +244,14 @@
       <children>
         <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="© by Jakub Bendík, Leonard Anton Lazorík 2026" HBox.hgrow="ALWAYS">
           <font>
-            <Font size="18.0" fx:id="x3" />
+            <Font size="18.0" />
           </font>
           <textFill>
-            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+            <Color red="0.625" green="0.625" blue="0.625" />
           </textFill>
         </Label>
         <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-        <Label font="$x3" maxWidth="-1.0" text="v0.0.1" textFill="$x4" HBox.hgrow="NEVER" />
+        <Label maxWidth="-1.0" text="v0.0.1" HBox.hgrow="NEVER" />
       </children>
       <padding>
         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

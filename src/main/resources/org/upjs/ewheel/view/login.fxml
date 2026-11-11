@@ -85,7 +85,7 @@
             </HBox>
             <HBox alignment="CENTER" prefWidth="200.0">
                <children>
-                  <Button fx:id="loginButotn" mnemonicParsing="false" onAction="#loginAction" onMousePressed="#loginPressed" text="Prihlásiť">
+                  <Button fx:id="loginButotn" mnemonicParsing="false" onAction="#loginAction" text="Prihlásiť">
                      <font>
                         <Font size="18.0" />
                      </font>

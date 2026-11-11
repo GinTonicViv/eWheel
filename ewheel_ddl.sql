@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `Vehicle` (
     `last_stk` DATE NOT NULL,
     `next_oil_change_kilometers` DECIMAL(7,1) NOT NULL,
     `next_oil_change_date` DATE NOT NULL,
-    PRIMARY KEY(`Vehicle_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `Vehicle_Contract` (
     `price` DECIMAL(12,2) NOT NULL,
     `start_kilometers` DECIMAL(7,1) NOT NULL,
     `end_kilometers` DECIMAL(7,1),
-    PRIMARY KEY(`Vehicle_Contract_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `Vehicle_Service` (
     `title_optional` VARCHAR(50),
     `info` TEXT(500) NOT NULL,
     `date` DATE NOT NULL,
-    PRIMARY KEY(`Vehicle_Service_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `User` (
     `birthdate` DATE NOT NULL,
     `driving_licence` VARCHAR(50) NOT NULL,
     `created_at` TIMESTAMP NOT NULL,
-    PRIMARY KEY(`User_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `Activity_Logging` (
     `user_id` BINARY(16) NOT NULL,
     `status` VARCHAR(50) NOT NULL,
     `created_at` TIMESTAMP NOT NULL,
-    PRIMARY KEY(`Activity_Logging_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `Business_Trip` (
     `end_date` DATETIME NOT NULL,
     `start_address` BINARY(16) NOT NULL,
     `destination_address` BINARY(16) NOT NULL,
-    PRIMARY KEY(`Business_Trip_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `Address` (
     `City` VARCHAR(100) NOT NULL,
     `zip` VARCHAR(5) NOT NULL,
     `region` ENUM('BA', 'TT', 'TN', 'NR', 'ZA', 'BB', 'PO', 'KE') NOT NULL,
-    PRIMARY KEY(`address_id`)
+    PRIMARY KEY(`uuid`)
     );
 
 

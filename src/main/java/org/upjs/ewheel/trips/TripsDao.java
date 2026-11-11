@@ -25,4 +25,6 @@ public interface TripsDao {
     void deactivate(UUID id);
 
     Trip reactivate(UUID id);
+
+    List<Trip> listRecentTrips(Integer limit);
 }

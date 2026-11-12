@@ -2,5 +2,7 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/org/upjs/ewheel/trips/MysqlTripsDao.java" value="3ce6993e-c886-4458-91c2-47f7c77ce83b" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ce6993e-c886-4458-91c2-47f7c77ce83b/console.sql" value="3ce6993e-c886-4458-91c2-47f7c77ce83b" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ce6993e-c886-4458-91c2-47f7c77ce83b/console_1.sql" value="3ce6993e-c886-4458-91c2-47f7c77ce83b" />
   </component>
 </project>

@@ -13,7 +13,6 @@ public record User(
         String password,
         Boolean is_active,
         Date birthdate,
-        String driving_licence,
         Timestamp created_at
 ) {
 }

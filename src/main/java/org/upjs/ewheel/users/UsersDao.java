@@ -1,5 +1,7 @@
 package org.upjs.ewheel.users;
 
+import org.upjs.ewheel.users.driving_licence_rights.Category;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -23,6 +25,8 @@ public interface UsersDao {
     List<User> searchUser(String query);
 
     List<User> findAll();
+
+    List<Category> listUsersDrivingLicenceRights();
 
     void deactivate(UUID id);
 

@@ -1,5 +1,6 @@
 package org.upjs.ewheel.trips;
 
+import org.upjs.ewheel.trips.TripRecords.TripRowAnalytics;
 import org.upjs.ewheel.users.User;
 import java.time.LocalDate;
 import java.util.List;
@@ -26,7 +27,7 @@ public interface TripsDao {
 
     Trip reactivate(UUID id);
 
-    List<Trip> listRecentTrips(Integer limit);
+    List<TripRowAnalytics> listTripsOfVehicleAnalytics(UUID vehicle_id,Integer limit);
 
     public List<Trip> listCarTrips(Integer limit, UUID id);
 }

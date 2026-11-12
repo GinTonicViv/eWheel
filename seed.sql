@@ -1,29 +1,44 @@
---Vehicles
+-- Testovacie dáta pre eWheel
+-- Poradie je dôležité kvôli cudzím kľúčom:
+-- Vehicle, User, driving_licence_rights, Address, Business_Trip
+SET NAMES utf8mb4;
+
+-- 1) Vozidlá
 INSERT INTO `Vehicle`
-(`uuid`, `name`, `licence_plate`, `category`, `is_active`,
- `kilometers`, `last_stk`, `next_oil_change_kilometers`, `next_oil_change_date`)
+    (`uuid`, `name`, `licence_plate`, `category`, `is_active`,
+     `kilometers`, `last_stk`, `next_oil_change_kilometers`, `next_oil_change_date`)
 VALUES
-    (UNHEX(REPLACE('0b854872-23c8-4838-929a-081211132f46', '-', '')),
+    (UNHEX(REPLACE('0b854872-23c8-4838-929a-081211132f46','-','')),
      'Škoda Octavia', 'PO123AB', 'OSO', TRUE, 84250.5, '2025-09-15', 90000.0, '2026-12-01'),
-    (UNHEX(REPLACE('3ea89cd4-0026-4ed1-ba7b-9e4592aa828b', '-', '')),
+    (UNHEX(REPLACE('3ea89cd4-0026-4ed1-ba7b-9e4592aa828b','-','')),
      'VW Transporter', 'PO456CD', 'NAK', TRUE, 152300.0, '2026-02-10', 160000.0, '2027-01-15'),
-    (UNHEX(REPLACE('fd5ca77f-2a06-4de3-bba6-ad38a47e53c2', '-', '')),
+    (UNHEX(REPLACE('fd5ca77f-2a06-4de3-bba6-ad38a47e53c2','-','')),
      'Ford Focus', 'KE789EF', 'OSO', TRUE, 61400.2, '2026-05-20', 70000.0, '2027-03-10'),
-    (UNHEX(REPLACE('137ebde3-9881-4cc8-b17b-96cc5e222df3', '-', '')),
+    (UNHEX(REPLACE('137ebde3-9881-4cc8-b17b-96cc5e222df3','-','')),
      'Renault Master', 'PO321GH', 'DOD', FALSE, 198750.8, '2025-03-01', 200000.0, '2026-08-30'),
-    (UNHEX(REPLACE('5af12545-d079-43c3-90c2-bea0634b8b88', '-', '')),
+    (UNHEX(REPLACE('5af12545-d079-43c3-90c2-bea0634b8b88','-','')),
      'Toyota Corolla', 'BA654IJ', 'OSO', TRUE, 23100.0, '2026-07-12', 30000.0, '2027-06-01');
 
--- 1) Používatelia (heslo je len zástupný text, nie skutočný hash)
+-- 2) Používatelia (heslo je len zástupný text, nie skutočný hash)
 INSERT INTO `User`
-(`uuid`, `email`, `name`, `last_name`, `role`, `password`, `is_active`, `birthdate`, `driving_licence`, `created_at`)
+    (`uuid`, `email`, `name`, `last_name`, `role`, `password`, `is_active`, `birthdate`, `created_at`)
 VALUES
     (UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-','')),
-     'jan.novak@ewheel.sk', 'Ján', 'Novák', 'ADMIN', 'test-heslo', TRUE, '1985-04-12', 'SK123456', NOW()),
+     'jan.novak@ewheel.sk', 'Ján', 'Novák', 'ADMIN', 'test-heslo', TRUE, '1985-04-12', NOW()),
     (UNHEX(REPLACE('6146921e-d87d-419f-a9da-5352a4a6229d','-','')),
-     'eva.kovacova@ewheel.sk', 'Eva', 'Kováčová', 'EMPLOYEE', 'test-heslo', TRUE, '1992-09-30', 'SK654321', NOW());
+     'eva.kovacova@ewheel.sk', 'Eva', 'Kováčová', 'EMPLOYEE', 'test-heslo', TRUE, '1992-09-30', NOW());
 
--- 2) Adresy
+-- 3) Vodičské oprávnenia
+INSERT INTO `driving_licence_rights` (`uuid`, `category`, `user_id`)
+VALUES
+    (UNHEX(REPLACE('2f1c7a3e-5b84-4d1a-9c6e-8a0b3d7e4f21','-','')), 'B',
+     UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-',''))),
+    (UNHEX(REPLACE('7d9e4b62-1a35-4c8f-b2d0-6e5f9a1c3b47','-','')), 'C',
+     UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-',''))),
+    (UNHEX(REPLACE('c4a8e215-9f63-47b0-8d1e-3b7a2f6c9d58','-','')), 'B',
+     UNHEX(REPLACE('6146921e-d87d-419f-a9da-5352a4a6229d','-','')));
+
+-- 4) Adresy
 INSERT INTO `Address` (`uuid`, `street`, `Number`, `City`, `zip`, `region`)
 VALUES
     (UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')), 'Hlavná', '12', 'Prešov', '08001', 'PO'),
@@ -31,10 +46,10 @@ VALUES
     (UNHEX(REPLACE('1634fb7c-38dc-4114-810c-72f6a5c13b14','-','')), 'Hlavná', '30', 'Košice', '04001', 'KE'),
     (UNHEX(REPLACE('d33199e6-b23f-4e08-8591-70d89822de3d','-','')), 'Námestie slobody', '2', 'Žilina', '01001', 'ZA');
 
--- 3) Výjazdy
+-- 5) Výjazdy
 INSERT INTO `Business_Trip`
-(`uuid`, `reason`, `note`, `status`, `vehicle_id`, `user_id`,
- `start_date`, `end_date`, `start_address`, `destination_address`)
+    (`uuid`, `reason`, `note`, `status`, `vehicle_id`, `user_id`,
+     `start_date`, `end_date`, `start_address`, `destination_address`)
 VALUES
     (UNHEX(REPLACE('9c28f8fb-a925-4c01-90ca-295ebfcce546','-','')), 'business_trip', 'Porada na centrále', 'approved',
      UNHEX(REPLACE('0b854872-23c8-4838-929a-081211132f46','-','')), UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-','')),
@@ -65,3 +80,28 @@ VALUES
      UNHEX(REPLACE('3ea89cd4-0026-4ed1-ba7b-9e4592aa828b','-','')), UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-','')),
      '2026-11-18 07:00:00', '2026-11-18 12:00:00',
      UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')), UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')));
+
+-- 6) Ďalšie schválené výjazdy
+INSERT INTO `Business_Trip`
+    (`uuid`, `reason`, `note`, `status`, `vehicle_id`, `user_id`,
+     `start_date`, `end_date`, `start_address`, `destination_address`)
+VALUES
+    (UNHEX(REPLACE('db41f967-5526-4af6-a28b-c9074219306e','-','')), 'business_trip', 'Rokovanie s partnerom', 'approved',
+     UNHEX(REPLACE('0b854872-23c8-4838-929a-081211132f46','-','')), UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-','')),
+     '2026-11-12 07:00:00', '2026-11-12 17:00:00',
+     UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')), UNHEX(REPLACE('b141e241-cceb-4b31-a697-578cd5b0bc5b','-',''))),
+
+    (UNHEX(REPLACE('2cab4ce8-1a47-4f5a-a85e-1baa672b9bcd','-','')), 'client_visit', 'Prezentácia u klienta', 'approved',
+     UNHEX(REPLACE('fd5ca77f-2a06-4de3-bba6-ad38a47e53c2','-','')), UNHEX(REPLACE('6146921e-d87d-419f-a9da-5352a4a6229d','-','')),
+     '2026-11-13 08:30:00', '2026-11-13 15:00:00',
+     UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')), UNHEX(REPLACE('1634fb7c-38dc-4114-810c-72f6a5c13b14','-',''))),
+
+    (UNHEX(REPLACE('26434eb3-7a58-4a5a-992b-f96cd73c18d3','-','')), 'transport_of_goods', 'Dodávka tovaru', 'approved',
+     UNHEX(REPLACE('3ea89cd4-0026-4ed1-ba7b-9e4592aa828b','-','')), UNHEX(REPLACE('6146921e-d87d-419f-a9da-5352a4a6229d','-','')),
+     '2026-11-16 06:00:00', '2026-11-16 13:00:00',
+     UNHEX(REPLACE('1634fb7c-38dc-4114-810c-72f6a5c13b14','-','')), UNHEX(REPLACE('d33199e6-b23f-4e08-8591-70d89822de3d','-',''))),
+
+    (UNHEX(REPLACE('46091449-0a22-4c60-baf2-0ec4b2d0525e','-','')), 'training', 'Odborné školenie', 'approved',
+     UNHEX(REPLACE('5af12545-d079-43c3-90c2-bea0634b8b88','-','')), UNHEX(REPLACE('e6c80cbb-dffc-433c-9837-15f1b981c007','-','')),
+     '2026-11-19 08:00:00', '2026-11-19 16:00:00',
+     UNHEX(REPLACE('01809dec-9733-4665-8893-25656a89309d','-','')), UNHEX(REPLACE('b141e241-cceb-4b31-a697-578cd5b0bc5b','-','')));

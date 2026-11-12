@@ -17,7 +17,7 @@ public interface AddressDao {
 
     List<Trip> findByZip(String zip);
 
-    List<Trip> findAll();
+    List<Address> findAll();
 
     void deactivate(UUID id);
 

@@ -1,10 +1,11 @@
 package org.upjs.ewheel.trips;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.upjs.ewheel.UuidUtil;
 import org.upjs.ewheel.users.User;
 
-import javax.sql.DataSource;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -69,6 +70,14 @@ public class MysqlTripsDao implements TripsDao {
 
     @Override
     public List<Trip> listRecentTrips(Integer limit) {
-        return List.of();
+        return jdbc.query("SELECT * FROM Business_Trip ORDER BY start_date DESC LIMIT ?",
+                new TripRowMapper(), limit);
+    }
+
+    @Override
+    public List<Trip> listCarTrips(Integer limit, UUID id) {
+        String sql = "SELECT * FROM Business_Trip WHERE vehicle_id = ? ORDER BY start_date DESC LIMIT ?";
+        List<Trip> trips = jdbc.query(sql, new TripRowMapper(),UuidUtil.toBytes(id), limit);
+        return new ArrayList<>(trips);
     }
 }

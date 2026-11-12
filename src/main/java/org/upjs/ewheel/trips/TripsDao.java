@@ -27,4 +27,6 @@ public interface TripsDao {
     Trip reactivate(UUID id);
 
     List<Trip> listRecentTrips(Integer limit);
+
+    public List<Trip> listCarTrips(Integer limit, UUID id);
 }

@@ -1,6 +1,5 @@
 package org.upjs.ewheel.trips;
 
-import org.upjs.ewheel.trips.TripRecords.TripRowAnalytics;
 import org.upjs.ewheel.users.User;
 import java.time.LocalDate;
 import java.util.List;

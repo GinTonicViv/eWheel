@@ -9,15 +9,15 @@ public interface VehiclesDao {
 
     Vehicle findById(UUID id);
 
-    Vehicle findByLicencePlate(String licencePlate);
+    VehicleData findByLicencePlate(String licencePlate);
 
-    List<Vehicle> findByName(String name);
+    List<VehicleData> findByName(String name);
 
-    List<Vehicle> findByCategory(VehicleCategory vehicleCategory);
+    List<VehicleData> findByCategory(VehicleCategory vehicleCategory);
 
-    List<Vehicle> searchVehicle(String query);
+    List<VehicleData> searchVehicle(String query);
 
-    List<Vehicle> findAll();
+    List<VehicleData> findAll();
 
     void deactivate(UUID id);
 

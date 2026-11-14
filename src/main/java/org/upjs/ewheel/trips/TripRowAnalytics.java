@@ -1,4 +1,4 @@
-package org.upjs.ewheel.trips.TripRecords;
+package org.upjs.ewheel.trips;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

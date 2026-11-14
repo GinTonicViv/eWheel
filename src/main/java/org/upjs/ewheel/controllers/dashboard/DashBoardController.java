@@ -9,14 +9,11 @@ import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 import org.upjs.ewheel.DaoFactory;
-import org.upjs.ewheel.UuidUtil;
-import org.upjs.ewheel.trips.Trip;
-import org.upjs.ewheel.trips.TripRecords.TripRowAnalytics;
+import org.upjs.ewheel.trips.TripRowAnalytics;
 import org.upjs.ewheel.trips.TripsDao;
-import org.upjs.ewheel.vehicles.Vehicle;
+import org.upjs.ewheel.vehicles.VehicleData;
 import org.upjs.ewheel.vehicles.VehiclesDao;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class DashBoardController {
@@ -24,7 +21,7 @@ public class DashBoardController {
     private final TripsDao tripsDao = DaoFactory.INSTANCE.getTripsDao();
     private final VehiclesDao vehiclesDao = DaoFactory.INSTANCE.getVehiclesDao();
 
-    private final ObservableList<Vehicle> vehicles = FXCollections.observableArrayList();
+    private final ObservableList<VehicleData> vehicles = FXCollections.observableArrayList();
     private UUID selectedVehicle = null;
     private final ObservableList<TripRowAnalytics> recentTrips = FXCollections.observableArrayList();
 
@@ -68,18 +65,18 @@ public class DashBoardController {
     private SVGPath searchButton;
 
     @FXML
-    private ChoiceBox<Vehicle> selectCar;
+    private ChoiceBox<VehicleData> selectCar;
 
     @FXML
     void initialize() {
         //choicebox
-        selectCar.setConverter(new StringConverter<>() {
+        selectCar.setConverter(new StringConverter<VehicleData>() {
             @Override
-            public String toString(Vehicle v) {
+            public String toString(VehicleData v) {
                 return v == null ? "" : v.name() + " (" + v.licencePlate() + ")";
             }
             @Override
-            public Vehicle fromString(String s) {
+            public VehicleData fromString(String s) {
                 return null;
             }
         });
@@ -94,9 +91,11 @@ public class DashBoardController {
             kilometersData.setText(v.kilometers().toString());
             kilometersLabel.setText("Kilometre");
             categoryData.setText(v.category().name());
-            categoryLabel.setText("Kategoria");
+            categoryLabel.setText("Kategória");
             isActiveData.setText(v.active() ? "Áno" : "Nie");
             isActiveLabel.setText("Je aktívne?");
+            numberTripsData.setText(v.trips_count().toString());
+            numberTripsLabel.setText("Celkový počet výjazdov");
         });
 
         //listview

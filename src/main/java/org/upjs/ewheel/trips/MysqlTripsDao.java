@@ -2,7 +2,6 @@ package org.upjs.ewheel.trips;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.upjs.ewheel.UuidUtil;
-import org.upjs.ewheel.trips.TripRecords.TripRowAnalytics;
 import org.upjs.ewheel.users.User;
 
 import java.time.LocalDate;

@@ -30,29 +30,31 @@ public class MysqlVehiclesDao implements VehiclesDao {
     }
 
     @Override
-    public Vehicle findByLicencePlate(String licencePlate) {
+    public VehicleData findByLicencePlate(String licencePlate) {
         return null;
     }
 
     @Override
-    public List<Vehicle> findByName(String name) {
+    public List<VehicleData> findByName(String name) {
         return List.of();
     }
 
     @Override
-    public List<Vehicle> findByCategory(VehicleCategory vehicleCategory) {
+    public List<VehicleData> findByCategory(VehicleCategory vehicleCategory) {
+        String sql = "SELECT * FROM VEHICLES WHERE category = ?";
+        List<VehicleData> vehicles = jdbc.query(sql, new VehicleDataRowMapper(), vehicleCategory);
+        return new ArrayList<>(vehicles);
+    }
+
+    @Override
+    public List<VehicleData> searchVehicle(String query) {
         return List.of();
     }
 
     @Override
-    public List<Vehicle> searchVehicle(String query) {
-        return List.of();
-    }
-
-    @Override
-    public List<Vehicle> findAll() {
-        String sql = "SELECT * FROM Vehicle";
-        List<Vehicle> vehicles = jdbc.query(sql, new VehicleRowMapper());
+    public List<VehicleData> findAll() {
+        String sql = "SELECT v.*, (SELECT COUNT(*) FROM Business_Trip AS bt WHERE bt.vehicle_id = v.uuid AND bt.status = 'approved') AS trips_count FROM Vehicle AS v";
+        List<VehicleData> vehicles = jdbc.query(sql,new VehicleDataRowMapper());
         return new ArrayList<>(vehicles);
     }
 

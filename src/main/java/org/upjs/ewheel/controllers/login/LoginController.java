@@ -20,7 +20,6 @@ public class LoginController {
     void loginAction(ActionEvent event) throws IOException {
         // TODO: validacia prihlasenia
 
-        // jeden Stage: len vymenime scenu, takze nie je co zatvarat
         Stage stage = (Stage) loginButotn.getScene().getWindow();
 
         var loader = new FXMLLoader(getClass().getResource("/org/upjs/ewheel/view/mainPage.fxml"));

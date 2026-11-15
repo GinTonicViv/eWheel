@@ -9,7 +9,7 @@ import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 import org.upjs.ewheel.DaoFactory;
-import org.upjs.ewheel.trips.TripRowAnalytics;
+import org.upjs.ewheel.trips.TripData;
 import org.upjs.ewheel.trips.TripsDao;
 import org.upjs.ewheel.vehicles.VehicleData;
 import org.upjs.ewheel.vehicles.VehiclesDao;
@@ -23,7 +23,7 @@ public class DashBoardController {
 
     private final ObservableList<VehicleData> vehicles = FXCollections.observableArrayList();
     private UUID selectedVehicle = null;
-    private final ObservableList<TripRowAnalytics> recentTrips = FXCollections.observableArrayList();
+    private final ObservableList<TripData> recentTrips = FXCollections.observableArrayList();
 
     @FXML
     private Button addRequestButton;
@@ -53,7 +53,7 @@ public class DashBoardController {
     private Text kilometersLabel;
 
     @FXML
-    private ListView<TripRowAnalytics> listViewRecent;
+    private ListView<TripData> listViewRecent;
 
     @FXML
     private Text numberTripsData;
@@ -101,13 +101,12 @@ public class DashBoardController {
         //listview
         listViewRecent.setCellFactory(lv -> new ListCell<>() {
             @Override
-            protected void updateItem(TripRowAnalytics t, boolean empty) {
+            protected void updateItem(TripData t, boolean empty) {
                 super.updateItem(t, empty);
                 setText(empty || t == null ? null
-                        : t.startDate().toLocalDate() + "  " + t.fullName() + "  (" + t.status() + ")");
+                        : t.startDate().toLocalDate() + "  " + t.userFullName() + "  (" + t.status() + ")");
             }
         });
-
         listViewRecent.setItems(recentTrips);
     }
 

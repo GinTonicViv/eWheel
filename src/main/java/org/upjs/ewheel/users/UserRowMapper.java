@@ -17,8 +17,7 @@ public class UserRowMapper implements RowMapper<User> {
                 Role.valueOf(rs.getString("role")),
                 rs.getString("password"),
                 rs.getInt("is_active") > 0 ? true : false,
-                rs.getDate("birthdate"),
-                rs.getTimestamp("timestamp")
+                rs.getDate("birthdate")
         );
     }
 }

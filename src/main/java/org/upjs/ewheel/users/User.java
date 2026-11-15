@@ -12,7 +12,6 @@ public record User(
         Role role,
         String password,
         Boolean is_active,
-        Date birthdate,
-        Timestamp created_at
+        Date birthdate
 ) {
 }

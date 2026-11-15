@@ -3,6 +3,7 @@ package org.upjs.ewheel.users;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.upjs.ewheel.users.driving_licence_rights.Category;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -69,8 +70,10 @@ public class MysqlUsersDao implements UsersDao {
     }
 
     @Override
-    public List<User> findAll() {
-        return List.of();
+    public List<UserData> findAll() {
+        String sql = "SELECT * FROM User";
+        List<UserData> users = jdbc.query(sql, new UserDataRowMapper());
+        return new ArrayList<UserData>(users);
     }
 
     @Override

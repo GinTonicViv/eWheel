@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="790.0" prefWidth="1200.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="790.0" prefWidth="1200.0" stylesheets="@css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.upjs.ewheel.controllers.tripApproval.TripApprovalController">
    <children>
       <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -104,19 +104,11 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label text="Status:" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
                         <DatePicker fx:id="DateToDatePicker" maxWidth="1.7976931348623157E308" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></DatePicker>
-                        <ChoiceBox fx:id="statusChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></ChoiceBox>
+                        <Button fx:id="filterButton" mnemonicParsing="false" onAction="#applyFilters" prefHeight="26.0" prefWidth="229.0" text="Nastaviť filtre" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -145,7 +137,7 @@
                         <RowConstraints minHeight="10.0" vgrow="NEVER" />
                      </rowConstraints>
                      <children>
-                        <StackPane fx:id="previousPageStackPaneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0">
+                        <StackPane fx:id="previousPageButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0">
                            <children>
                               <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" rotate="180.0" styleClass="pageIcon" />
                            </children>
@@ -154,7 +146,7 @@
                               <String fx:value="pageIcon" />
                            </styleClass>
                         </StackPane>
-                        <StackPane fx:id="nextPageStackPaneBUtton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="2">
+                        <StackPane fx:id="nextPageButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="2">
                            <children>
                               <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" styleClass="pageIcon" />
                            </children>
@@ -178,7 +170,7 @@
                                     <Font name="System Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="\$currPageNum">
+                              <Label fx:id="currPageNum" text="\$currPageNum">
                                  <font>
                                     <Font name="System Italic" size="18.0" />
                                  </font>
@@ -188,7 +180,7 @@
                                     <Font name="System Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="\$pageCount">
+                              <Label fx:id="pageCount" text="\$pageCount">
                                  <font>
                                     <Font name="System Italic" size="18.0" />
                                  </font>

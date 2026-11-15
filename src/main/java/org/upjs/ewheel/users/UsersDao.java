@@ -24,7 +24,7 @@ public interface UsersDao {
 
     List<User> searchUser(String query);
 
-    List<User> findAll();
+    List<UserData> findAll();
 
     List<Category> listUsersDrivingLicenceRights();
 

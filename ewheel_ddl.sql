@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `Vehicle_Contract` (
                                                   `uuid` BINARY(16) NOT NULL UNIQUE,
                                                   `Vehicle_id` BINARY(16) NOT NULL,
                                                   `contract_number` VARCHAR(100) NOT NULL UNIQUE,
-                                                  `contract_type` ENUM('PURCHASE', 'LEASING', 'RENTAL') NOT NULL,
+                                                  `contract_type` ENUM('PURCHASE', 'LEASING', 'RENTAL', 'SELL') NOT NULL,
                                                   `provider` VARCHAR(150) NOT NULL,
                                                   `start_date` DATE NOT NULL,
                                                   `end_date` DATE,

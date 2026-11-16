@@ -159,6 +159,12 @@
     -fx-stroke-line-join: round;
 }
 
+.addIcon {
+    -fx-fill: -greenish-black-900;
+    -fx-scale-x: 0.08;
+    -fx-scale-y: 0.08;
+}
+
 .square-button:hover,
 .square-button:hover .searchIcon,
 .square-button:hover .pageIcon{
@@ -166,6 +172,15 @@
     -fx-cursor: hand;
     -fx-background-color: -grayish-yellow;
     -fx-stroke: -grayish-yellow-100;
+    -fx-border-color: none;
+    -fx-effect: dropshadow(gaussian, -grayish-yellow, 8, 0, 3, 3);
+}
+
+.square-button:hover .addIcon {
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-background-color: -grayish-yellow;
+    -fx-fill: -grayish-yellow-100;
     -fx-border-color: none;
     -fx-effect: dropshadow(gaussian, -grayish-yellow, 8, 0, 3, 3);
 }

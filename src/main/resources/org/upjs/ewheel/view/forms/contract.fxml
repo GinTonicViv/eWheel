@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" spacing="5.0" stylesheets="@../css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Zmluvné informácie:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="saveButton" mnemonicParsing="false" styleClass="okButton" text="Uložiť">
+               <padding>
+                  <Insets bottom="3.0" left="20.0" right="20.0" top="3.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="Typ zmluvy: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="contractTypeChoiceBox" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="platnosť zmluvy od: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="contractValidFromDatePicker" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="platnosť zmluvy do: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="contractValidToDatePicker" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="Cena/splátky (mesačne): ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PriceTextField" HBox.hgrow="ALWAYS" />
+            <Label text="€">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="Hodnota odometra pri kúpe: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="odometerValueAtPurchaseTextField" HBox.hgrow="ALWAYS" />
+            <Label text="km">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="Hodnota odometra pri predaji: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="odometerValueAtSellTextField" HBox.hgrow="ALWAYS" />
+            <Label text="km">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

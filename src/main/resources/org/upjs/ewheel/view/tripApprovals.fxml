@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -22,7 +23,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="NEVER">
          <children>
-            <TextField fx:id="approvalTextField" maxWidth="-Infinity" minWidth="450.0" prefWidth="450.0" promptText="vyhladajte(meno zamestnanca, auto, ŠPZ)">
+            <TextField fx:id="approvalTextField" maxWidth="-Infinity" minWidth="450.0" prefWidth="450.0" promptText="zamestnanec, model auta">
                <font>
                   <Font size="18.0" />
                </font>
@@ -116,6 +117,41 @@
                   <Insets />
                </VBox.margin>
             </HBox>
+            <GridPane hgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+                  <Label text="Čas vytvorenia požiadavky:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-font-weight: Bold;" text="Vozdilo:" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Meno zamestnanca:" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Status:" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
             <ListView fx:id="tripsListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets />

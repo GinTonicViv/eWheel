@@ -13,8 +13,8 @@ To best describe our app and navigation we've prepared detailed diagram explaini
 > - [x] Vytvorit DashBoard Main Stage
 > - [x] Vytvorit DashBoard Layout Scene
 > - [x] Vytvorit Schvalovanie vyjazdov / Kniha jazd
-> - [ ] Vytvorit Administrativu vozidiel
-> - [ ] Vytvorit Administraciu Pouzivatelov
+> - [x] Vytvorit Administrativu vozidiel
+> - [ ] Vytvorit Administraciu Pouzivatelov - meno (fulltext), (vyklikanie): rola, vodicske opravnenie, usporiadania
 >
 > Samostatne okna:
 >
@@ -30,7 +30,7 @@ To best describe our app and navigation we've prepared detailed diagram explaini
 > [!CAUTION]
 > Okna nemaju diakritiku ani zadane id as of 5.11.2026 :face_exhaling:
 
-![eWheel-smd.png](eWheel-smd.png)
+![eWheel-smd.png](eWheel_smd.png)
 *by eWheel*
 
 ### Database schema

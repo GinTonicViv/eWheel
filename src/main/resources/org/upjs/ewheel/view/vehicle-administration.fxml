@@ -21,7 +21,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" spacing="10.0" VBox.vgrow="NEVER">
          <children>
-            <TextField fx:id="approvalTextField" maxWidth="-Infinity" minWidth="450.0" prefWidth="450.0" promptText="model, EČV">
+            <TextField fx:id="vehicleSearchTextField" maxWidth="-Infinity" minWidth="450.0" prefWidth="450.0" promptText="model, EČV">
                <font>
                   <Font size="18.0" />
                </font>
@@ -39,7 +39,7 @@
                </styleClass>
             </StackPane>
             <Pane maxWidth="1.7976931348623157E308" minWidth="0.0" HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" styleClass="okButton" text="Pridať nové vozidlo" HBox.hgrow="NEVER">
+            <Button mnemonicParsing="false" onAction="#addNewVehicle" styleClass="okButton" text="Pridať nové vozidlo" HBox.hgrow="NEVER">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -91,13 +91,13 @@
                            </font>
                         </Label>
                         <ChoiceBox fx:id="userChoiceBox" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" />
-                        <ChoiceBox fx:id="vehicleChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ChoiceBox fx:id="ownershipChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Usporiadanie:" GridPane.columnIndex="2">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox maxWidth="1.7976931348623157E308" minWidth="50.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                        <ChoiceBox fx:id="sortChoiceBox" maxWidth="1.7976931348623157E308" minWidth="50.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -153,7 +153,7 @@
                   </Label>
                </children>
             </GridPane>
-            <ListView fx:id="tripsListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+            <ListView fx:id="vehicleListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -170,7 +170,7 @@
                         <RowConstraints minHeight="10.0" vgrow="NEVER" />
                      </rowConstraints>
                      <children>
-                        <StackPane fx:id="previousPageStackPaneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0">
+                        <StackPane fx:id="previousPageStackPaneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onPreviousPage" prefHeight="35.0" prefWidth="35.0">
                            <children>
                               <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" rotate="180.0" styleClass="pageIcon" />
                            </children>
@@ -179,7 +179,7 @@
                               <String fx:value="pageIcon" />
                            </styleClass>
                         </StackPane>
-                        <StackPane fx:id="nextPageStackPaneBUtton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="2">
+                        <StackPane fx:id="nextPageStackPaneBUtton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onNextPage" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="2">
                            <children>
                               <SVGPath content="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z" styleClass="pageIcon" />
                            </children>
@@ -195,7 +195,7 @@
                                     <Font name="System Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="\$currPageNum">
+                              <Label fx:id="currentPage" text="\$currPageNum">
                                  <font>
                                     <Font name="System Italic" size="18.0" />
                                  </font>
@@ -205,7 +205,7 @@
                                     <Font name="System Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="\$pageCount">
+                              <Label fx:id="pageCount" text="\$pageCount">
                                  <font>
                                     <Font name="System Italic" size="18.0" />
                                  </font>

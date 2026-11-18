@@ -16,7 +16,7 @@ import org.upjs.ewheel.vehicles.VehiclesDao;
 
 import java.util.UUID;
 
-public class DashBoardController {
+public class DashboardController {
 
     private final TripsDao tripsDao = DaoFactory.INSTANCE.getTripsDao();
     private final VehiclesDao vehiclesDao = DaoFactory.INSTANCE.getVehiclesDao();

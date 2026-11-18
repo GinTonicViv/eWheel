@@ -18,7 +18,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="maintenanceTitleLabel" text="&amp;title">
+            <Label fx:id="maintenanceTypeLabel" text="&amp;title">
                <font>
                   <Font size="14.0" />
                </font>

@@ -83,7 +83,6 @@ CREATE TABLE IF NOT EXISTS `Address` (
                                          `Number` VARCHAR(20) NOT NULL,
                                          `City` VARCHAR(100) NOT NULL,
                                          `zip` VARCHAR(5) NOT NULL,
-                                         `region` ENUM('BA', 'TT', 'TN', 'NR', 'ZA', 'BB', 'PO', 'KE') NOT NULL,
                                          PRIMARY KEY(`uuid`)
 );
 

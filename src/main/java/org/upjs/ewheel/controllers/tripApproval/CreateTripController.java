@@ -1,4 +1,4 @@
 package org.upjs.ewheel.controllers.tripApproval;
 
-public class TripDeleteController {
+public class CreateTripController {
 }

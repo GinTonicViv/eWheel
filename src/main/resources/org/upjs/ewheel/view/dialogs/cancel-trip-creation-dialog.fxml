@@ -40,7 +40,7 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="cancelButton" mnemonicParsing="false" styleClass="cancelButton" text="Áno zrušiť">
+            <Button mnemonicParsing="false" onAction="#onCancelCreation" styleClass="cancelButton" text="Áno zrušiť">
                <font>
                   <Font size="18.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Insets bottom="3.0" left="25.0" right="25.0" top="3.0" />
                </padding>
             </Button>
-            <Button fx:id="continueEditButton" mnemonicParsing="false" style="-fx-font-style: Bold;" styleClass="okButton" text="Pokračovať ">
+            <Button mnemonicParsing="false" onAction="#onContinueCreating" style="-fx-font-style: Bold;" styleClass="okButton" text="Pokračovať ">
                <font>
                   <Font size="18.0" />
                </font>

@@ -40,7 +40,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
@@ -57,7 +56,7 @@
                </font>
             </Label>
             <Pane maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" HBox.hgrow="ALWAYS" />
-            <Label fx:id="sceneNameTitle" styleClass="sceneName" text="\$SceneName">
+            <Label fx:id="currentSceneLabel" styleClass="sceneName" text="\$SceneName">
                <font>
                   <Font size="36.0" />
                </font>
@@ -68,7 +67,7 @@
                   <Font name="System Italic" size="24.0" />
                </font>
             </Label>
-            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="68.0" minWidth="68.0" prefHeight="68.0" prefWidth="68.0" styleClass="avatarIcon">
+            <StackPane fx:id="userIcon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="68.0" minWidth="68.0" prefHeight="68.0" prefWidth="68.0" styleClass="avatarIcon">
                <children>
                   <ImageView fx:id="userAvatarImage" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="avatarIcon" visible="false" />
                   <SVGPath content="M7.5.877a6.623 6.623 0 1 1 0 13.246A6.623 6.623 0 0 1 7.5.877m0 9.098a4.02 4.02 0 0 0-3.48 2.004a5.65 5.65 0 0 0 3.48 1.193a5.65 5.65 0 0 0 3.479-1.194A4.02 4.02 0 0 0 7.5 9.975m0-8.149a5.674 5.674 0 0 0-4.192 9.494A4.97 4.97 0 0 1 7.5 9.025c1.761 0 3.308.916 4.192 2.294A5.674 5.674 0 0 0 7.5 1.826m0 2.33a2.35 2.35 0 1 1 0 4.698a2.35 2.35 0 0 1 0-4.699m0 .949a1.4 1.4 0 1 0 0 2.8a1.4 1.4 0 0 0 0-2.8" styleClass="avatarIcon" />
@@ -86,7 +85,7 @@
          <children>
             <VBox id="sideBar" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="sideBar" stylesheets="@../view/css/dashboardMain.css">
                <children>
-                  <StackPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" styleClass="sideButton">
+                  <StackPane fx:id="dashboardButton" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" onMouseClicked="#onDashBoard" styleClass="sideButton">
                      <children>
                         <HBox fx:id="dashboardNavButton" alignment="CENTER" onMouseClicked="#showDashboard" spacing="10.0">
                            <children>
@@ -102,7 +101,7 @@
                               </StackPane>
                               <Label styleClass="sideButton" text="Prehľad">
                                  <font>
-                                    <Font size="28.0" />
+                                    <Font size="24.0" />
                                  </font>
                               </Label>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -113,7 +112,7 @@
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>
                   </StackPane>
-                  <StackPane alignment="CENTER_RIGHT" styleClass="sideButton">
+                  <StackPane fx:id="tripsApprovalsButton" alignment="CENTER_RIGHT" onMouseClicked="#onTripApprovals" styleClass="sideButton">
                      <children>
                         <HBox fx:id="tripAprovalNavButton" alignment="CENTER" onMouseClicked="#showTripApproval" spacing="10.0">
                            <children>
@@ -140,7 +139,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </StackPane>
-                  <StackPane alignment="CENTER_RIGHT" layoutX="15.0" layoutY="50.0" styleClass="sideButton">
+                  <StackPane fx:id="tripsBookButton" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="50.0" onMouseClicked="#onTripsBook" styleClass="sideButton">
                      <children>
                         <HBox fx:id="tripsBookNavButton" alignment="CENTER" onMouseClicked="#showTripsBook" spacing="10.0">
                            <children>
@@ -167,7 +166,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </StackPane>
-                  <StackPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="80.0" styleClass="sideButton">
+                  <StackPane fx:id="vehicleAdministrationButton" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="80.0" onMouseClicked="#onVehicleAdministration" styleClass="sideButton">
                      <children>
                         <HBox fx:id="vehicleAdministrationNavButton" alignment="CENTER" onMouseClicked="#showVehicleAdministration" spacing="10.0">
                            <children>
@@ -194,7 +193,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </StackPane>
-                  <StackPane alignment="CENTER_RIGHT" layoutX="10.0" layoutY="106.0" styleClass="sideButton">
+                  <StackPane fx:id="userAdministrationButton" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="106.0" onMouseClicked="#onUserAdministration" styleClass="sideButton">
                      <children>
                         <HBox alignment="CENTER" spacing="10.0">
                            <children>
@@ -230,7 +229,7 @@
                   <Insets top="10.0" />
                </padding>
             </VBox>
-            <StackPane fx:id="contentPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="760.0" minWidth="1200.0" HBox.hgrow="ALWAYS">
+            <StackPane fx:id="contentStackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="760.0" minWidth="1000.0" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
@@ -242,16 +241,13 @@
       </HBox>
     <HBox id="footer" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <children>
-        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="© by Jakub Bendík, Leonard Anton Lazorík 2026" HBox.hgrow="ALWAYS">
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="© by Jakub Bendík, Leonard Anton Lazorík 2026" textFill="#9f9f9f" HBox.hgrow="ALWAYS">
           <font>
             <Font size="18.0" />
           </font>
-          <textFill>
-            <Color red="0.625" green="0.625" blue="0.625" />
-          </textFill>
         </Label>
         <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-        <Label maxWidth="-1.0" text="v0.0.1" HBox.hgrow="NEVER" />
+        <Label maxWidth="-1.0" text="v1.0.0" textFill="#9f9f9f" HBox.hgrow="NEVER" />
       </children>
       <padding>
         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

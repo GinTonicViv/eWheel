@@ -11,27 +11,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" spacing="5.0" stylesheets="@../css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" spacing="5.0" stylesheets="@../css/dashboardMain.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefWidth="200.0" VBox.vgrow="NEVER">
          <children>
             <Label text="Servis Info:">
                <font>
-                  <Font size="16.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Pane HBox.hgrow="ALWAYS" />
-            <Button fx:id="saveButton" mnemonicParsing="false" styleClass="okButton" text="Uložiť">
+            <Button mnemonicParsing="false" onAction="#onSaveMaintenance" styleClass="okButton" text="Uložiť">
                <padding>
                   <Insets bottom="3.0" left="20.0" right="20.0" top="3.0" />
                </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Button>
          </children>
       </HBox>
+      <Label fx:id="errorMessage" styleClass="errorMessage" text="Label" />
       <HBox alignment="CENTER_LEFT">
          <children>
-            <Label text="Kategória servisu: ">
+            <Label text="Kategória servisu: *">
                <font>
                   <Font size="15.0" />
                </font>
@@ -49,12 +52,16 @@
             <TextField fx:id="otherMaintenanceTextField" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <Label text="Krátky popis:" />
-      <TextArea fx:id="descriptionTextArea" prefHeight="200.0" prefWidth="200.0">
+      <Label text="Krátky popis:*">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TextArea fx:id="descriptionTextArea" prefHeight="150.0" prefWidth="200.0" promptText="max 500 znakov">
          <font>
             <Font size="14.0" />
          </font>
       </TextArea>
+      <Label opacity="0.6" text="* Povinné polia" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

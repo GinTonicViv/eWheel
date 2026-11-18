@@ -21,22 +21,22 @@
             <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="\$firstName">
+            <Label fx:id="userFirstNameLabel" text="\$firstName">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label text="\$lastName" GridPane.columnIndex="1">
+            <Label fx:id="userLastNameLabel" text="\$lastName" GridPane.columnIndex="1">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label text="\$role" GridPane.columnIndex="4">
+            <Label fx:id="userRole" text="\$role" GridPane.columnIndex="4">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label text="&amp;driving_licences" GridPane.columnIndex="3">
+            <Label fx:id="drivingLicencesLabel" text="&amp;driving_licences" GridPane.columnIndex="3">
                <font>
                   <Font size="16.0" />
                </font>
